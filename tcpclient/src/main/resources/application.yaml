@@ -1,0 +1,4 @@
+tcp:
+  server:
+    port: 35729
+    host: localhost
