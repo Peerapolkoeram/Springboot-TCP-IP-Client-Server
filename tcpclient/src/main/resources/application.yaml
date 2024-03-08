@@ -1,4 +1,5 @@
 tcp:
   server:
-    port: 35729
+    port: 9098
     host: localhost
+  pollsize: 200
