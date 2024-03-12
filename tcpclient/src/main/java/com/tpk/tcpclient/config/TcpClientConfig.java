@@ -30,6 +30,8 @@ public class TcpClientConfig {
     public AbstractClientConnectionFactory clientConnectionFactory() {
         TcpNioClientConnectionFactory tcpNioClientConnectionFactory = new TcpNioClientConnectionFactory(host, port);
         tcpNioClientConnectionFactory.setUsingDirectBuffers(true);
+        tcpNioClientConnectionFactory.setSoTcpNoDelay(true);
+        tcpNioClientConnectionFactory.setSoKeepAlive(true);
         return new CachingClientConnectionFactory(tcpNioClientConnectionFactory, pollSize);
     }
 

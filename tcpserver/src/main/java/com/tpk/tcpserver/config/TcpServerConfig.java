@@ -22,6 +22,8 @@ public class TcpServerConfig {
     public AbstractServerConnectionFactory serverConnectionFactory() {
         TcpNioServerConnectionFactory tcpNioServerConnectionFactory = new TcpNioServerConnectionFactory(serverPort);
         tcpNioServerConnectionFactory.setUsingDirectBuffers(true);
+        tcpNioServerConnectionFactory.isSoTcpNoDelay();
+        tcpNioServerConnectionFactory.isSoKeepAlive();
         return tcpNioServerConnectionFactory;
     }
 
